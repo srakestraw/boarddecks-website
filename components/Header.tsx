@@ -11,6 +11,12 @@ export default function Header() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6">
             <a 
+              href="/manifesto" 
+              className="text-primary font-medium hover:text-primary/80 transition-colors duration-200"
+            >
+              Manifesto
+            </a>
+            <a 
               href="#ready-to-get-started" 
               className="text-primary font-medium hover:text-primary/80 transition-colors duration-200"
               onClick={(e) => {
