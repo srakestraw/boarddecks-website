@@ -16,10 +16,22 @@ console.log('📋 SHEET_NAME:', process.env.GOOGLE_SHEET_NAME || SHEET_NAME)
 
 if (process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL && process.env.GOOGLE_PRIVATE_KEY) {
   try {
+    // Handle base64 encoded private key
+    let privateKey = process.env.GOOGLE_PRIVATE_KEY
+    if (privateKey && !privateKey.includes('-----BEGIN PRIVATE KEY-----')) {
+      // Decode base64 if needed
+      try {
+        privateKey = Buffer.from(privateKey, 'base64').toString('utf-8')
+        console.log('🔓 Decoded base64 private key')
+      } catch (decodeError) {
+        console.log('⚠️ Failed to decode base64, using as-is')
+      }
+    }
+    
     const auth = new google.auth.GoogleAuth({
       credentials: {
         client_email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
-        private_key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n')
+        private_key: privateKey.replace(/\\n/g, '\n')
       },
       scopes: ['https://www.googleapis.com/auth/spreadsheets']
     })
