@@ -74,8 +74,8 @@ export default function Home() {
             A living board deck that syncs your systems, validates your numbers, and gives your team time back.
           </p>
           
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-8">
+          {/* CTA Button */}
+          <div className="flex justify-center mb-8">
             <button
               onClick={handleRequestAccess}
               aria-expanded={showForm}
@@ -83,11 +83,6 @@ export default function Home() {
               className="bg-[#6C2BD9] text-white rounded-lg px-6 py-3 hover:bg-[#5B24B8] transition-colors duration-200 font-medium"
             >
               Request Early Access
-            </button>
-            <button
-              className="border border-[#6C2BD9] text-[#6C2BD9] bg-white hover:bg-[#F3EBFF] transition-colors duration-200 rounded-lg px-6 py-3 font-medium"
-            >
-              Book a Demo
             </button>
           </div>
 
