@@ -72,6 +72,25 @@ export default function Home() {
     }
 
     try {
+      // For now, use a mock response for local development
+      // In production, this will use the Netlify Function
+      const isDevelopment = typeof window !== 'undefined' && window.location.hostname === 'localhost'
+      
+      if (isDevelopment) {
+        // Mock successful response for local development
+        console.log('📝 Local Development: Mocking successful submission')
+        console.log('Data:', data)
+        
+        // Simulate API delay
+        await new Promise(resolve => setTimeout(resolve, 1000))
+        
+        setSubmitMessage('Thank you! Your early access request has been submitted successfully. (Local development mode)')
+        event.currentTarget.reset()
+        setShowForm(false)
+        return
+      }
+      
+      // Production: Use Netlify Function
       const response = await fetch('/.netlify/functions/early-access', {
         method: 'POST',
         headers: {
