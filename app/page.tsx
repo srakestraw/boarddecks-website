@@ -160,17 +160,7 @@ export default function Home() {
             )}
           </div>
           
-          {/* CTA Button */}
-          <div className="flex justify-center mb-8">
-            <button
-              onClick={handleRequestAccess}
-              aria-expanded={showForm}
-              aria-controls="early-access-form"
-              className="bg-[#231e5a] text-white rounded-lg px-6 py-3 hover:bg-[#1a1645] transition-colors duration-200 font-medium"
-            >
-              Request Early Access
-            </button>
-          </div>
+
 
           {/* Early Access Form - Hidden initially */}
           {showForm && (
