@@ -37,7 +37,7 @@ BoardDecks/
 
 ## 🎨 Brand Colors
 
-- **Primary**: `#6C2BD9` (Purple)
+- **Primary**: `#231e5a` (Purple)
 - **Accent**: `#B794F4` (Light Purple)
 - **Dark Navy**: `#1A1D2E` (Text)
 - **Light Purple BG**: `#F9F6FF` (Background)
