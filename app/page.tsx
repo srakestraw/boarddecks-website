@@ -780,7 +780,7 @@ export default function Home() {
       </section>
 
       {/* Ready to Get Started Section */}
-      <section className="bg-gray-50 py-20">
+      <section id="ready-to-get-started" className="bg-gray-50 py-20">
         <div className="max-w-5xl mx-auto px-4">
           <div className="text-center max-w-xl mx-auto mb-12">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-4">
