@@ -572,7 +572,7 @@ export default function Home() {
               What You Get
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
               <article className="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-md transition-shadow duration-200">
                 <div className="flex items-center justify-center w-16 h-16 bg-[#6C2BD9] rounded-full mb-4 mx-auto">
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -626,6 +626,23 @@ export default function Home() {
                 </h3>
                 <p className="text-darkNavy text-base leading-relaxed text-center">
                   Automated data collection and reporting. Focus on value creation, not data wrangling.
+                </p>
+              </article>
+
+              <article className="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-md transition-shadow duration-200">
+                <div className="flex items-center justify-center w-16 h-16 bg-[#6C2BD9] rounded-full mb-4 mx-auto">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-darkNavy text-center mb-3">
+                  Portfolio Company Health Card
+                </h3>
+                <p className="text-darkNavy text-base leading-relaxed text-center mb-2">
+                  Instantly surface which businesses need your attention — based on product usage, financial performance, support trends, and engagement scores.
+                </p>
+                <p className="text-sm text-gray-600 text-center italic">
+                  Know where you need to focus. No spreadsheets. No guesswork.
                 </p>
               </article>
             </div>
