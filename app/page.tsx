@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import Header from '@/components/Header'
 
 export default function Home() {
@@ -9,6 +9,12 @@ export default function Home() {
   const [submitMessage, setSubmitMessage] = useState('')
   const [submitError, setSubmitError] = useState('')
   const [selectedAudience, setSelectedAudience] = useState<'firm' | 'company'>('firm')
+  const [isClient, setIsClient] = useState(false)
+  
+  // Ensure client-side rendering for interactive elements
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
   const formRef = useRef<HTMLDivElement>(null)
 
   const handleRequestAccess = () => {
@@ -80,37 +86,45 @@ export default function Home() {
             <h2 className="text-2xl font-semibold text-darkNavy mb-6">
               Choose Your Path
             </h2>
+
+
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button
-                onClick={() => {
-                  console.log('Setting audience to firm')
-                  setSelectedAudience('firm')
-                }}
-                className={`px-8 py-4 rounded-lg font-medium transition-all duration-200 ${
-                  selectedAudience === 'firm'
-                    ? 'bg-[#6C2BD9] text-white shadow-lg'
-                    : 'bg-gray-100 text-darkNavy hover:bg-gray-200'
-                }`}
-                aria-pressed={selectedAudience === 'firm'}
-              >
-                I'm a PE/VC Firm
-              </button>
-              <button
-                onClick={() => {
-                  console.log('Setting audience to company')
-                  setSelectedAudience('company')
-                }}
-                className={`px-8 py-4 rounded-lg font-medium transition-all duration-200 ${
-                  selectedAudience === 'company'
-                    ? 'bg-[#6C2BD9] text-white shadow-lg'
-                    : 'bg-gray-100 text-darkNavy hover:bg-gray-200'
-                }`}
-                aria-pressed={selectedAudience === 'company'}
-              >
-                I'm a Portfolio Company
-              </button>
-            </div>
+            {isClient && (
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <button
+                  onClick={() => {
+                    console.log('Button clicked: Setting audience to firm')
+                    setSelectedAudience('firm')
+                    console.log('State updated to firm')
+                  }}
+                  className={`px-8 py-4 rounded-lg font-medium transition-all duration-200 ${
+                    selectedAudience === 'firm'
+                      ? 'bg-[#6C2BD9] text-white shadow-lg'
+                      : 'bg-gray-100 text-darkNavy hover:bg-gray-200'
+                  }`}
+                  aria-pressed={selectedAudience === 'firm'}
+                  type="button"
+                >
+                  I'm a PE/VC Firm
+                </button>
+                <button
+                  onClick={() => {
+                    console.log('Button clicked: Setting audience to company')
+                    setSelectedAudience('company')
+                    console.log('State updated to company')
+                  }}
+                  className={`px-8 py-4 rounded-lg font-medium transition-all duration-200 ${
+                    selectedAudience === 'company'
+                      ? 'bg-[#6C2BD9] text-white shadow-lg'
+                      : 'bg-gray-100 text-darkNavy hover:bg-gray-200'
+                  }`}
+                  aria-pressed={selectedAudience === 'company'}
+                  type="button"
+                >
+                  I'm a Portfolio Company
+                </button>
+              </div>
+            )}
           </div>
           
           {/* CTA Button */}
@@ -226,6 +240,8 @@ export default function Home() {
           )}
         </div>
       </section>
+
+
 
 
 
