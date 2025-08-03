@@ -1,9 +1,10 @@
 const { google } = require('googleapis')
 
 // Google Sheets configuration
-const SPREADSHEET_ID = process.env.GOOGLE_SPREADSHEET_ID || '1TrZEorP3JvvlXjY2wCmOh2T6RrBmh3apJtloOsy6mPk'
+const SPREADSHEET_ID = process.env.GOOGLE_SPREADSHEET_ID
 const SHEET_NAME = process.env.GOOGLE_SHEET_NAME || 'Early Access Signups'
-const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY || 'AIzaSyA3blmcVuUrPkC2aV95tHeFXVi_GiGmfi8'
+const GOOGLE_SERVICE_ACCOUNT_EMAIL = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL
+const GOOGLE_PRIVATE_KEY = process.env.GOOGLE_PRIVATE_KEY
 
 // Initialize Google Sheets with service account (if credentials available)
 let sheets = null
