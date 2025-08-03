@@ -15,6 +15,19 @@ export default function Home() {
   useEffect(() => {
     setIsClient(true)
   }, [])
+  
+  // Auto-scroll to content section when audience is selected
+  useEffect(() => {
+    if (isClient && selectedAudience) {
+      const contentSection = document.getElementById('content-section')
+      if (contentSection) {
+        contentSection.scrollIntoView({ 
+          behavior: 'smooth', 
+          block: 'start' 
+        })
+      }
+    }
+  }, [selectedAudience, isClient])
   const formRef = useRef<HTMLDivElement>(null)
 
   const handleRequestAccess = () => {
@@ -96,6 +109,16 @@ export default function Home() {
                     console.log('Button clicked: Setting audience to firm')
                     setSelectedAudience('firm')
                     console.log('State updated to firm')
+                    // Auto-scroll to content after a brief delay to ensure DOM update
+                    setTimeout(() => {
+                      const contentSection = document.getElementById('content-section')
+                      if (contentSection) {
+                        contentSection.scrollIntoView({ 
+                          behavior: 'smooth', 
+                          block: 'start' 
+                        })
+                      }
+                    }, 100)
                   }}
                   className={`px-8 py-4 rounded-lg font-medium transition-all duration-200 ${
                     selectedAudience === 'firm'
@@ -112,6 +135,16 @@ export default function Home() {
                     console.log('Button clicked: Setting audience to company')
                     setSelectedAudience('company')
                     console.log('State updated to company')
+                    // Auto-scroll to content after a brief delay to ensure DOM update
+                    setTimeout(() => {
+                      const contentSection = document.getElementById('content-section')
+                      if (contentSection) {
+                        contentSection.scrollIntoView({ 
+                          behavior: 'smooth', 
+                          block: 'start' 
+                        })
+                      }
+                    }, 100)
                   }}
                   className={`px-8 py-4 rounded-lg font-medium transition-all duration-200 ${
                     selectedAudience === 'company'
@@ -247,7 +280,7 @@ export default function Home() {
 
       {/* The Problem Section - Conditional based on audience */}
       {selectedAudience === 'firm' && (
-        <section className="py-20 bg-white">
+        <section id="content-section" className="py-20 bg-white">
           <div className="max-w-5xl mx-auto px-4">
             <div className="text-center mb-4">
               <span className="inline-block bg-[#6C2BD9] text-white px-4 py-2 rounded-full text-sm font-medium">
@@ -311,7 +344,7 @@ export default function Home() {
       )}
 
       {selectedAudience === 'company' && (
-        <section className="py-20 bg-white">
+        <section id="content-section" className="py-20 bg-white">
           <div className="max-w-5xl mx-auto px-4">
             <div className="text-center mb-4">
               <span className="inline-block bg-[#6C2BD9] text-white px-4 py-2 rounded-full text-sm font-medium">
