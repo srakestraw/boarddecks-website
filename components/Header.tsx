@@ -4,7 +4,7 @@ import Logo from './Logo'
 export default function Header() {
   return (
     <header className="border-b border-gray-100 bg-white">
-      <nav className="mx-auto max-w-screen-xl px-4 py-6">
+      <nav className="py-6">
         <div className="flex justify-between items-center">
           <Logo className="h-10 w-auto" />
           

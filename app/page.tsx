@@ -66,7 +66,7 @@ export default function Home() {
     <div className="min-h-screen bg-white">
       <Header />
       <section className="py-20 lg:py-32 bg-white">
-        <div className="max-w-5xl mx-auto text-center px-4">
+        <div className="max-w-5xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary leading-tight mb-8">
             Turn Hours of Board Prep into Instant Confidence
           </h1>
