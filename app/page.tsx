@@ -32,7 +32,7 @@ export default function Home() {
   
   // Auto-scroll to content section when audience is selected
   useEffect(() => {
-    if (isClient && selectedAudience) {
+    if (selectedAudience) {
       const contentSection = document.getElementById('content-section')
       if (contentSection) {
         contentSection.scrollIntoView({ 
@@ -41,7 +41,7 @@ export default function Home() {
         })
       }
     }
-  }, [selectedAudience, isClient])
+  }, [selectedAudience])
   const formRef = useRef<HTMLDivElement>(null)
 
   const handleRequestAccess = () => {
@@ -116,58 +116,69 @@ export default function Home() {
 
 
             
-            {isClient && (
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button
-                  onClick={() => {
-                    setSelectedAudience('firm')
-                    // Auto-scroll to content after a brief delay to ensure DOM update
-                    setTimeout(() => {
-                      const contentSection = document.getElementById('content-section')
-                      if (contentSection) {
-                        contentSection.scrollIntoView({ 
-                          behavior: 'smooth', 
-                          block: 'start' 
-                        })
-                      }
-                    }, 100)
-                  }}
-                                                className={`px-8 py-4 rounded-lg font-medium transition-all duration-200 ${
-                                selectedAudience === 'firm'
-                                  ? 'bg-[#231e5a] text-white shadow-lg'
-                                  : 'bg-gray-100 text-darkNavy hover:bg-gray-200'
-                              }`}
-                  aria-pressed={selectedAudience === 'firm'}
-                  type="button"
-                >
-                  I'm a PE/VC Firm
-                </button>
-                <button
-                  onClick={() => {
-                    setSelectedAudience('company')
-                    // Auto-scroll to content after a brief delay to ensure DOM update
-                    setTimeout(() => {
-                      const contentSection = document.getElementById('content-section')
-                      if (contentSection) {
-                        contentSection.scrollIntoView({ 
-                          behavior: 'smooth', 
-                          block: 'start' 
-                        })
-                      }
-                    }, 100)
-                  }}
-                                                className={`px-8 py-4 rounded-lg font-medium transition-all duration-200 ${
-                                selectedAudience === 'company'
-                                  ? 'bg-[#231e5a] text-white shadow-lg'
-                                  : 'bg-gray-100 text-darkNavy hover:bg-gray-200'
-                              }`}
-                  aria-pressed={selectedAudience === 'company'}
-                  type="button"
-                >
-                  I'm a Portfolio Company
-                </button>
-              </div>
-            )}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              {isClient ? (
+                <>
+                  <button
+                    onClick={() => {
+                      setSelectedAudience('firm')
+                      // Auto-scroll to content after a brief delay to ensure DOM update
+                      setTimeout(() => {
+                        const contentSection = document.getElementById('content-section')
+                        if (contentSection) {
+                          contentSection.scrollIntoView({ 
+                            behavior: 'smooth', 
+                            block: 'start' 
+                          })
+                        }
+                      }, 100)
+                    }}
+                    className={`px-8 py-4 rounded-lg font-medium transition-all duration-200 ${
+                      selectedAudience === 'firm'
+                        ? 'bg-[#231e5a] text-white shadow-lg'
+                        : 'bg-gray-100 text-darkNavy hover:bg-gray-200'
+                    }`}
+                    aria-pressed={selectedAudience === 'firm'}
+                    type="button"
+                  >
+                    I'm a PE/VC Firm
+                  </button>
+                  <button
+                    onClick={() => {
+                      setSelectedAudience('company')
+                      // Auto-scroll to content after a brief delay to ensure DOM update
+                      setTimeout(() => {
+                        const contentSection = document.getElementById('content-section')
+                        if (contentSection) {
+                          contentSection.scrollIntoView({ 
+                            behavior: 'smooth', 
+                            block: 'start' 
+                          })
+                        }
+                      }, 100)
+                    }}
+                    className={`px-8 py-4 rounded-lg font-medium transition-all duration-200 ${
+                      selectedAudience === 'company'
+                        ? 'bg-[#231e5a] text-white shadow-lg'
+                        : 'bg-gray-100 text-darkNavy hover:bg-gray-200'
+                    }`}
+                    aria-pressed={selectedAudience === 'company'}
+                    type="button"
+                  >
+                    I'm a Portfolio Company
+                  </button>
+                </>
+              ) : (
+                <>
+                  <div className="px-8 py-4 rounded-lg font-medium bg-[#231e5a] text-white shadow-lg">
+                    I'm a PE/VC Firm
+                  </div>
+                  <div className="px-8 py-4 rounded-lg font-medium bg-gray-100 text-darkNavy">
+                    I'm a Portfolio Company
+                  </div>
+                </>
+              )}
+            </div>
           </div>
           
 
