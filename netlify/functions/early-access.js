@@ -16,15 +16,20 @@ console.log('📋 SHEET_NAME:', process.env.GOOGLE_SHEET_NAME || SHEET_NAME)
 
 if (process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL && process.env.GOOGLE_PRIVATE_KEY) {
   try {
-    // Handle base64 encoded private key
+    // Handle private key - try both formats
     let privateKey = process.env.GOOGLE_PRIVATE_KEY
-    if (privateKey && !privateKey.includes('-----BEGIN PRIVATE KEY-----')) {
-      // Decode base64 if needed
-      try {
-        privateKey = Buffer.from(privateKey, 'base64').toString('utf-8')
-        console.log('🔓 Decoded base64 private key')
-      } catch (decodeError) {
-        console.log('⚠️ Failed to decode base64, using as-is')
+    if (privateKey) {
+      // If it doesn't look like a PEM key, try base64 decode
+      if (!privateKey.includes('-----BEGIN PRIVATE KEY-----')) {
+        try {
+          privateKey = Buffer.from(privateKey, 'base64').toString('utf-8')
+          console.log('🔓 Decoded base64 private key')
+        } catch (decodeError) {
+          console.log('⚠️ Failed to decode base64, using as-is')
+          console.log('🔍 Decode error:', decodeError.message)
+        }
+      } else {
+        console.log('🔑 Using PEM format private key')
       }
     }
     
