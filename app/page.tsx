@@ -85,7 +85,14 @@ export default function Home() {
         await new Promise(resolve => setTimeout(resolve, 1000))
         
         setSubmitMessage('Thank you! Your early access request has been submitted successfully. (Local development mode)')
-        event.currentTarget.reset()
+        // Safely reset the form
+        try {
+          if (event.currentTarget) {
+            event.currentTarget.reset()
+          }
+        } catch (resetError) {
+          console.log('Form reset error (non-critical):', resetError)
+        }
         setShowForm(false)
         return
       }
@@ -105,7 +112,14 @@ export default function Home() {
 
       if (response.ok && result.success) {
         setSubmitMessage('Thank you! Your early access request has been submitted successfully.')
-        event.currentTarget.reset()
+        // Safely reset the form
+        try {
+          if (event.currentTarget) {
+            event.currentTarget.reset()
+          }
+        } catch (resetError) {
+          console.log('Form reset error (non-critical):', resetError)
+        }
         setShowForm(false)
       } else {
         console.error('🌐 Production: API Error:', result)
