@@ -99,15 +99,26 @@ exports.handler = async (event) => {
           lastName: sanitizedData.lastName,
           company: sanitizedData.company,
           email: sanitizedData.email
-        })
+        }),
+        redirect: 'follow'
       })
       
-      const result = await response.json()
+      console.log('📡 Response status:', response.status)
+      console.log('📡 Response headers:', Object.fromEntries(response.headers.entries()))
       
-      if (result.success) {
-        console.log('✅ Data saved to Google Sheets via webhook successfully')
-      } else {
-        console.error('❌ Google Apps Script webhook error:', result.error)
+      const responseText = await response.text()
+      console.log('📡 Response body:', responseText)
+      
+      try {
+        const result = JSON.parse(responseText)
+        if (result.success) {
+          console.log('✅ Data saved to Google Sheets via webhook successfully')
+        } else {
+          console.error('❌ Google Apps Script webhook error:', result.error)
+        }
+      } catch (parseError) {
+        console.log('⚠️ Response is not JSON, but webhook was called')
+        console.log('📝 Response text:', responseText)
       }
       
     } catch (error) {
