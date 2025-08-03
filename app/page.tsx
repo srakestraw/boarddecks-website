@@ -10,6 +10,20 @@ export default function Home() {
   const [submitError, setSubmitError] = useState('')
   const [selectedAudience, setSelectedAudience] = useState<'firm' | 'company'>('firm')
   const [isClient, setIsClient] = useState(false)
+
+  // Integration logos array
+  const logos = [
+    { name: "Salesforce", file: "salesforce.svg" },
+    { name: "HubSpot", file: "hubspot.svg" },
+    { name: "NetSuite", file: "netsuite.svg" },
+    { name: "QuickBooks", file: "quickbooks.svg" },
+    { name: "Jira", file: "jira.svg" },
+    { name: "Zendesk", file: "zendesk.svg" },
+    { name: "Azure DevOps", file: "azuredevops.svg" },
+    { name: "Workday", file: "workday.svg" },
+    { name: "Gainsight", file: "gainsight.svg" },
+    { name: "Mixpanel", file: "mixpanel.svg" }
+  ]
   
   // Ensure client-side rendering for interactive elements
   useEffect(() => {
@@ -706,76 +720,17 @@ export default function Home() {
             Works With What You Already Use
           </h2>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
-            <div className="bg-white rounded-lg p-4 flex flex-col items-center justify-center shadow-sm hover:shadow-md transition-shadow duration-200">
-              <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-3">
-                <span className="text-gray-600 font-bold text-sm">SF</span>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 max-w-5xl mx-auto">
+            {logos.map(({ name, file }) => (
+              <div key={name} className="bg-white rounded-lg p-4 flex flex-col items-center justify-center shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105">
+                <img 
+                  src={`/integrations/${file}`} 
+                  alt={name} 
+                  className="h-12 w-auto mb-3" 
+                />
+                <span className="text-sm text-darkNavy text-center">{name}</span>
               </div>
-              <span className="text-sm text-darkNavy text-center">Salesforce</span>
-            </div>
-
-            <div className="bg-white rounded-lg p-4 flex flex-col items-center justify-center shadow-sm hover:shadow-md transition-shadow duration-200">
-              <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-3">
-                <span className="text-gray-600 font-bold text-sm">HS</span>
-              </div>
-              <span className="text-sm text-darkNavy text-center">HubSpot</span>
-            </div>
-
-            <div className="bg-white rounded-lg p-4 flex flex-col items-center justify-center shadow-sm hover:shadow-md transition-shadow duration-200">
-              <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-3">
-                <span className="text-gray-600 font-bold text-sm">NS</span>
-              </div>
-              <span className="text-sm text-darkNavy text-center">NetSuite</span>
-            </div>
-
-            <div className="bg-white rounded-lg p-4 flex flex-col items-center justify-center shadow-sm hover:shadow-md transition-shadow duration-200">
-              <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-3">
-                <span className="text-gray-600 font-bold text-sm">QB</span>
-              </div>
-              <span className="text-sm text-darkNavy text-center">QuickBooks</span>
-            </div>
-
-            <div className="bg-white rounded-lg p-4 flex flex-col items-center justify-center shadow-sm hover:shadow-md transition-shadow duration-200">
-              <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-3">
-                <span className="text-gray-600 font-bold text-sm">JR</span>
-              </div>
-              <span className="text-sm text-darkNavy text-center">Jira</span>
-            </div>
-
-            <div className="bg-white rounded-lg p-4 flex flex-col items-center justify-center shadow-sm hover:shadow-md transition-shadow duration-200">
-              <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-3">
-                <span className="text-gray-600 font-bold text-sm">ZD</span>
-              </div>
-              <span className="text-sm text-darkNavy text-center">Zendesk</span>
-            </div>
-
-            <div className="bg-white rounded-lg p-4 flex flex-col items-center justify-center shadow-sm hover:shadow-md transition-shadow duration-200">
-              <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-3">
-                <span className="text-gray-600 font-bold text-sm">AD</span>
-              </div>
-              <span className="text-sm text-darkNavy text-center">MS DevOps</span>
-            </div>
-
-            <div className="bg-white rounded-lg p-4 flex flex-col items-center justify-center shadow-sm hover:shadow-md transition-shadow duration-200">
-              <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-3">
-                <span className="text-gray-600 font-bold text-sm">WD</span>
-              </div>
-              <span className="text-sm text-darkNavy text-center">Workday</span>
-            </div>
-
-            <div className="bg-white rounded-lg p-4 flex flex-col items-center justify-center shadow-sm hover:shadow-md transition-shadow duration-200">
-              <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-3">
-                <span className="text-gray-600 font-bold text-sm">GS</span>
-              </div>
-              <span className="text-sm text-darkNavy text-center">Gainsight</span>
-            </div>
-
-            <div className="bg-white rounded-lg p-4 flex flex-col items-center justify-center shadow-sm hover:shadow-md transition-shadow duration-200">
-              <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-3">
-                <span className="text-gray-600 font-bold text-sm">MP</span>
-              </div>
-              <span className="text-sm text-darkNavy text-center">Mixpanel</span>
-            </div>
+            ))}
           </div>
 
           <div className="text-center mt-12">
