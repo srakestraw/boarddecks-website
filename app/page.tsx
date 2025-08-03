@@ -805,6 +805,104 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Ready to Get Started Section */}
+      <section className="bg-gray-50 py-20">
+        <div className="max-w-5xl mx-auto px-4">
+          <div className="text-center max-w-xl mx-auto mb-12">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-4">
+              Ready to Get Started?
+            </h2>
+            <p className="text-lg md:text-xl text-darkNavy">
+              Request early access and be the first to use the living board deck built for modern PE-backed growth.
+            </p>
+          </div>
+
+          <div className="max-w-md mx-auto">
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="firstName" className="block text-sm font-medium text-darkNavy mb-2">
+                    First Name *
+                  </label>
+                  <input
+                    type="text"
+                    id="firstName"
+                    name="firstName"
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#6C2BD9] focus:border-transparent transition-colors duration-200"
+                    placeholder="Enter your first name"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="lastName" className="block text-sm font-medium text-darkNavy mb-2">
+                    Last Name *
+                  </label>
+                  <input
+                    type="text"
+                    id="lastName"
+                    name="lastName"
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#6C2BD9] focus:border-transparent transition-colors duration-200"
+                    placeholder="Enter your last name"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label htmlFor="company" className="block text-sm font-medium text-darkNavy mb-2">
+                  Company *
+                </label>
+                <input
+                  type="text"
+                  id="company"
+                  name="company"
+                  required
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#6C2BD9] focus:border-transparent transition-colors duration-200"
+                  placeholder="Enter your company name"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-darkNavy mb-2">
+                  Email *
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#6C2BD9] focus:border-transparent transition-colors duration-200"
+                  placeholder="Enter your email address"
+                />
+              </div>
+
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full bg-[#6C2BD9] text-white rounded-lg px-8 py-3 hover:bg-[#5B24B8] transition-colors duration-200 font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {isSubmitting ? 'Submitting...' : 'Request Early Access'}
+              </button>
+
+              {submitMessage && (
+                <div className="mt-4 p-4 bg-green-50 border border-green-200 rounded-lg">
+                  <p className="text-green-800 text-center">
+                    Thanks! We'll be in touch soon.
+                  </p>
+                </div>
+              )}
+
+              {submitError && (
+                <div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-lg">
+                  <p className="text-red-800 text-center">
+                    {submitError}
+                  </p>
+                </div>
+              )}
+            </form>
+          </div>
+        </div>
+      </section>
 
     </div>
   )
