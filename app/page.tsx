@@ -330,7 +330,7 @@ export default function Home() {
               </span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-primary text-center mb-10">
-              You don't get answers—just decks
+              You Don't Get Answers—You Get Slide Fatigue
             </h2>
             <p className="text-lg md:text-xl text-darkNavy text-center mb-16 max-w-3xl mx-auto">
               Board meetings are reactive, not strategic.
@@ -343,7 +343,7 @@ export default function Home() {
                 </div>
                 <div className="flex-1">
                   <p className="text-lg md:text-xl text-darkNavy leading-relaxed">
-                    Inconsistent reporting formats across portfolio companies
+                    Every portfolio company reports differently, making comparisons impossible
                   </p>
                 </div>
               </li>
@@ -354,7 +354,7 @@ export default function Home() {
                 </div>
                 <div className="flex-1">
                   <p className="text-lg md:text-xl text-darkNavy leading-relaxed">
-                    Manual data aggregation from dozens of different systems
+                    Insights are outdated before the boardroom discussion even begins
                   </p>
                 </div>
               </li>
@@ -365,7 +365,7 @@ export default function Home() {
                 </div>
                 <div className="flex-1">
                   <p className="text-lg md:text-xl text-darkNavy leading-relaxed">
-                    No standardized KPIs across your portfolio
+                    Boards don't trust the numbers—because data is stitched together manually from tools like Salesforce, NetSuite, and Jira
                   </p>
                 </div>
               </li>
@@ -376,7 +376,7 @@ export default function Home() {
                 </div>
                 <div className="flex-1">
                   <p className="text-lg md:text-xl text-darkNavy leading-relaxed">
-                    Spending hours on reports that are outdated by board meetings
+                    You're spending hours building reports that no one fully believes
                   </p>
                 </div>
               </li>
