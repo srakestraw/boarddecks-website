@@ -227,6 +227,8 @@ export default function Home() {
                         className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                         placeholder="Enter your first name"
                         autoFocus
+                        autoComplete="given-name"
+                        data-form-type="other"
                       />
                     </div>
 
@@ -242,6 +244,8 @@ export default function Home() {
                         minLength={2}
                         className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                         placeholder="Enter your last name"
+                        autoComplete="family-name"
+                        data-form-type="other"
                       />
                     </div>
                   </div>
@@ -258,6 +262,8 @@ export default function Home() {
                       minLength={2}
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                       placeholder="Enter your company name"
+                      autoComplete="organization"
+                      data-form-type="other"
                     />
                   </div>
 
@@ -273,6 +279,8 @@ export default function Home() {
                       pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                       placeholder="Enter your email address"
+                      autoComplete="email"
+                      data-form-type="other"
                     />
                   </div>
 
