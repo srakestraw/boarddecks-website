@@ -18,12 +18,16 @@ if (process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL && process.env.GOOGLE_PRIVATE_KEY) 
   try {
     // Handle private key - try both formats
     let privateKey = process.env.GOOGLE_PRIVATE_KEY
+    console.log('🔍 Private key length:', privateKey ? privateKey.length : 0)
+    console.log('🔍 Private key starts with:', privateKey ? privateKey.substring(0, 50) : 'N/A')
+    
     if (privateKey) {
       // If it doesn't look like a PEM key, try base64 decode
       if (!privateKey.includes('-----BEGIN PRIVATE KEY-----')) {
         try {
           privateKey = Buffer.from(privateKey, 'base64').toString('utf-8')
           console.log('🔓 Decoded base64 private key')
+          console.log('🔍 Decoded key starts with:', privateKey.substring(0, 50))
         } catch (decodeError) {
           console.log('⚠️ Failed to decode base64, using as-is')
           console.log('🔍 Decode error:', decodeError.message)
@@ -44,6 +48,7 @@ if (process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL && process.env.GOOGLE_PRIVATE_KEY) 
     console.log('✅ Google Sheets service account initialized')
   } catch (error) {
     console.error('Google Sheets service account initialization error:', error)
+    console.error('Error stack:', error.stack)
   }
 } else {
   console.log('ℹ️ Google Sheets service account credentials not configured')
