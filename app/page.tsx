@@ -72,9 +72,9 @@ export default function Home() {
     }
 
     try {
-      // For now, use a mock response for local development
-      // In production, this will use the Netlify Function
-      const isDevelopment = typeof window !== 'undefined' && window.location.hostname === 'localhost'
+      // Always use Netlify Function in production, mock in development
+      const isDevelopment = typeof window !== 'undefined' && 
+        (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
       
       if (isDevelopment) {
         // Mock successful response for local development
@@ -91,6 +91,7 @@ export default function Home() {
       }
       
       // Production: Use Netlify Function
+      console.log('🌐 Production: Sending to Netlify Function')
       const response = await fetch('/.netlify/functions/early-access', {
         method: 'POST',
         headers: {
@@ -100,15 +101,18 @@ export default function Home() {
       })
 
       const result = await response.json()
+      console.log('🌐 Production: Response received:', result)
 
       if (response.ok && result.success) {
         setSubmitMessage('Thank you! Your early access request has been submitted successfully.')
         event.currentTarget.reset()
         setShowForm(false)
       } else {
+        console.error('🌐 Production: API Error:', result)
         setSubmitError(result.error || 'Something went wrong. Please try again.')
       }
     } catch (error) {
+      console.error('🌐 Production: Network Error:', error)
       setSubmitError('Network error. Please check your connection and try again.')
     } finally {
       setIsSubmitting(false)
