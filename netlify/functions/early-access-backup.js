@@ -1,11 +1,12 @@
-// Google Apps Script webhook URL
-const GOOGLE_APPS_SCRIPT_URL = process.env.GOOGLE_APPS_SCRIPT_URL || 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec'
+const { google } = require('googleapis')
 
-console.log('🔧 Using Google Apps Script webhook approach')
-console.log('📡 Webhook URL:', GOOGLE_APPS_SCRIPT_URL)
+// Backup approach using API key (read-only, but we can test connectivity)
+const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY
+const SPREADSHEET_ID = process.env.GOOGLE_SPREADSHEET_ID || '1TrZEorP3JvvlXjY2wCmOh2T6RrBmh3apJtloOsy6mPk'
+const SHEET_NAME = process.env.GOOGLE_SHEET_NAME || 'Early Access Signups'
 
 exports.handler = async (event) => {
-  console.log('🚀 Netlify Function triggered')
+  console.log('🚀 Backup Netlify Function triggered')
   console.log('📋 Event method:', event.httpMethod)
   console.log('📋 Event path:', event.path)
   console.log('📋 Event body length:', event.body ? event.body.length : 0)
@@ -78,53 +79,53 @@ exports.handler = async (event) => {
 
     // Log the submission
     const timestamp = new Date().toISOString()
-    console.log('=== EARLY ACCESS SIGNUP ===')
+    console.log('=== EARLY ACCESS SIGNUP (BACKUP) ===')
     console.log('Timestamp:', timestamp)
     console.log('Name:', `${sanitizedData.firstName} ${sanitizedData.lastName}`)
     console.log('Company:', sanitizedData.company)
     console.log('Email:', sanitizedData.email)
-    console.log('==========================')
+    console.log('=====================================')
 
-    // Save to Google Sheets via Google Apps Script webhook
-    try {
-      console.log('📝 Sending data to Google Apps Script webhook...')
-      
-      const response = await fetch(GOOGLE_APPS_SCRIPT_URL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          firstName: sanitizedData.firstName,
-          lastName: sanitizedData.lastName,
-          company: sanitizedData.company,
-          email: sanitizedData.email
+    // Try to read from Google Sheets using API key (read-only test)
+    if (GOOGLE_API_KEY) {
+      try {
+        console.log('🔑 Testing Google Sheets API with API key...')
+        
+        const sheets = google.sheets({ version: 'v4', auth: GOOGLE_API_KEY })
+        
+        // Try to read the sheet to test connectivity
+        const readResponse = await sheets.spreadsheets.values.get({
+          spreadsheetId: SPREADSHEET_ID,
+          range: `${SHEET_NAME}!A:E`
         })
-      })
-      
-      const result = await response.json()
-      
-      if (result.success) {
-        console.log('✅ Data saved to Google Sheets via webhook successfully')
-      } else {
-        console.error('❌ Google Apps Script webhook error:', result.error)
+        
+        console.log('✅ Successfully connected to Google Sheets')
+        console.log('📊 Current rows in sheet:', readResponse.data.values ? readResponse.data.values.length : 0)
+        console.log('⚠️ Note: API key is read-only, cannot write data')
+        
+      } catch (error) {
+        console.error('❌ Google Sheets API key test failed:', error.message)
+        console.log('ℹ️ API key approach failed - this is expected as API keys are read-only')
       }
-      
-    } catch (error) {
-      console.error('❌ Google Apps Script webhook error:', error)
-      console.error('Error details:', error.message)
-      console.error('Error stack:', error.stack)
-      // Continue without failing the request
+    } else {
+      console.log('ℹ️ No Google API key configured')
     }
+
+    // For now, just log the data since we can't write with API key
+    console.log('📝 Data logged to console (API key is read-only)')
+    console.log('🔧 To enable writing, please fix the service account private key format')
 
     return {
       statusCode: 200,
       headers,
-      body: JSON.stringify({ success: true })
+      body: JSON.stringify({ 
+        success: true,
+        message: 'Data received successfully. Check logs for details.'
+      })
     }
 
   } catch (error) {
-    console.error('Early access submission error:', error)
+    console.error('Backup early access submission error:', error)
     
     return {
       statusCode: 500,
