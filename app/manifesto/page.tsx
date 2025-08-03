@@ -9,7 +9,9 @@ export default function ManifestoPage() {
         <h2 className="text-2xl font-semibold mb-4">Why We Exist</h2>
         <p className="mb-6">
           Board meetings shouldn't be performance theater. They should be moments of clarity — where bold decisions are made with confidence.
-          But today, they're anything but:
+        </p>
+        <p className="mb-6">
+          But today, they're anything but. ELT and key operating teams — the most expensive resources in the company — spend hours preparing slides and stitching together insights, only for the information to be <strong>stale by the time the boardroom discussion begins</strong>.
         </p>
         <ul className="list-disc pl-6 mb-8 space-y-2">
           <li>Every portfolio company reports differently.</li>
