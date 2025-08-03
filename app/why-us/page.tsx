@@ -1,6 +1,10 @@
+import Header from "@/components/Header";
+
 export default function WhyUsPage() {
   return (
-    <main className="bg-white text-dark-navy px-6 py-20 max-w-4xl mx-auto">
+    <>
+      <Header />
+      <main className="bg-white text-dark-navy px-6 py-20 max-w-4xl mx-auto">
       <h1 className="text-4xl font-bold mb-10 text-center">Why Us</h1>
 
       <p className="text-lg mb-6 text-center">
@@ -42,6 +46,7 @@ export default function WhyUsPage() {
       <p className="mt-12 text-lg text-center font-medium">
         We've lived the pain. That's why we're building BoardDecks — not just to automate reporting, but to deliver clarity where it counts.
       </p>
-    </main>
+      </main>
+    </>
   );
 } 

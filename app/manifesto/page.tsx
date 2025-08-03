@@ -1,8 +1,11 @@
+import Header from "@/components/Header";
 import EarlyAccessForm from "@/components/EarlyAccessForm";
 
 export default function ManifestoPage() {
   return (
-    <main className="bg-white text-dark-navy">
+    <>
+      <Header />
+      <main className="bg-white text-dark-navy">
       <section className="py-20 px-6 max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-10 text-center">The BoardDecks Manifesto</h1>
 
@@ -56,6 +59,7 @@ export default function ManifestoPage() {
           <EarlyAccessForm />
         </div>
       </section>
-    </main>
+      </main>
+    </>
   );
 } 
