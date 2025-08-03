@@ -6,7 +6,7 @@ export default function Header() {
     <header className="border-b border-gray-100 bg-white">
       <nav className="py-6">
         <div className="flex justify-between items-center">
-          <Logo className="h-10 w-auto" />
+          <Logo className="h-20 w-auto" />
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6">
