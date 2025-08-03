@@ -466,12 +466,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Secondary CTA */}
-            <div className="text-center mt-12">
-              <button className="bg-white text-[#231e5a] border-2 border-[#231e5a] rounded-lg px-8 py-3 hover:bg-[#231e5a] hover:text-white transition-colors duration-200 font-medium">
-                Get visibility across your portfolio. Request early access.
-              </button>
-            </div>
+
           </div>
         </section>
       )}
