@@ -106,9 +106,7 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button
                   onClick={() => {
-                    console.log('Button clicked: Setting audience to firm')
                     setSelectedAudience('firm')
-                    console.log('State updated to firm')
                     // Auto-scroll to content after a brief delay to ensure DOM update
                     setTimeout(() => {
                       const contentSection = document.getElementById('content-section')
@@ -132,9 +130,7 @@ export default function Home() {
                 </button>
                 <button
                   onClick={() => {
-                    console.log('Button clicked: Setting audience to company')
                     setSelectedAudience('company')
-                    console.log('State updated to company')
                     // Auto-scroll to content after a brief delay to ensure DOM update
                     setTimeout(() => {
                       const contentSection = document.getElementById('content-section')
@@ -269,7 +265,7 @@ export default function Home() {
 
 
       {/* The Problem Section - Conditional based on audience */}
-      {isClient && selectedAudience === 'firm' && (
+      {selectedAudience === 'firm' && (
         <section id="content-section" className="py-20 bg-white">
           <div className="max-w-5xl mx-auto px-4">
             <div className="text-center mb-4">
@@ -333,7 +329,7 @@ export default function Home() {
         </section>
       )}
 
-      {isClient && selectedAudience === 'company' && (
+      {selectedAudience === 'company' && (
         <section id="content-section" className="py-20 bg-white">
           <div className="max-w-5xl mx-auto px-4">
             <div className="text-center mb-4">
@@ -398,7 +394,7 @@ export default function Home() {
       )}
 
       {/* Our Solution Section - Conditional based on audience */}
-      {isClient && selectedAudience === 'firm' && (
+      {selectedAudience === 'firm' && (
         <section className="py-20 bg-gray-50">
           <div className="max-w-5xl mx-auto px-4">
             <h2 className="text-4xl md:text-5xl font-bold text-primary text-center mb-10">
@@ -471,7 +467,7 @@ export default function Home() {
         </section>
       )}
 
-      {isClient && selectedAudience === 'company' && (
+      {selectedAudience === 'company' && (
         <section className="py-20 bg-gray-50">
           <div className="max-w-5xl mx-auto px-4">
             <h2 className="text-4xl md:text-5xl font-bold text-primary text-center mb-10">
@@ -550,7 +546,7 @@ export default function Home() {
       )}
 
       {/* What You Get Section - Conditional based on audience */}
-      {isClient && selectedAudience === 'firm' && (
+      {selectedAudience === 'firm' && (
         <section className="py-20 bg-white">
           <div className="max-w-6xl mx-auto px-4">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary text-center mb-12">
@@ -635,7 +631,7 @@ export default function Home() {
         </section>
       )}
 
-      {isClient && selectedAudience === 'company' && (
+      {selectedAudience === 'company' && (
         <section className="py-20 bg-white">
           <div className="max-w-6xl mx-auto px-4">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary text-center mb-12">
