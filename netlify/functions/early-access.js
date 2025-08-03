@@ -37,10 +37,22 @@ if (process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL && process.env.GOOGLE_PRIVATE_KEY) 
       }
     }
     
+    // Fix the private key format - ensure proper line breaks
+    if (privateKey) {
+      privateKey = privateKey.replace(/\\n/g, '\n')
+      // If the key doesn't have proper line breaks, add them
+      if (!privateKey.includes('\n')) {
+        // This is a single-line key, we need to format it properly
+        const keyContent = privateKey.replace('-----BEGIN PRIVATE KEY-----', '').replace('-----END PRIVATE KEY-----', '').trim()
+        privateKey = `-----BEGIN PRIVATE KEY-----\n${keyContent}\n-----END PRIVATE KEY-----`
+        console.log('🔧 Reformatted private key with proper line breaks')
+      }
+    }
+    
     const auth = new google.auth.GoogleAuth({
       credentials: {
         client_email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
-        private_key: privateKey.replace(/\\n/g, '\n')
+        private_key: privateKey
       },
       scopes: ['https://www.googleapis.com/auth/spreadsheets']
     })
