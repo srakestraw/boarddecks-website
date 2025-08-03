@@ -9,6 +9,18 @@ export const metadata: Metadata = {
   description: 'Professional board deck templates and tools',
   keywords: 'board decks, presentations, templates, business',
   authors: [{ name: 'Board Decks Team' }],
+  icons: {
+    icon: [
+      { url: '/favicons/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicons/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicons/favicon-48x48.png', sizes: '48x48', type: 'image/png' },
+      { url: '/favicons/favicon-64x64.png', sizes: '64x64', type: 'image/png' },
+      { url: '/favicons/favicon-128x128.png', sizes: '128x128', type: 'image/png' },
+      { url: '/favicons/favicon-256x256.png', sizes: '256x256', type: 'image/png' },
+    ],
+    shortcut: '/favicons/favicon.ico',
+    apple: '/favicons/apple-touch-icon.png',
+  },
 }
 
 export const viewport: Viewport = {
