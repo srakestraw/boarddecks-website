@@ -105,7 +105,11 @@ exports.handler = async (event) => {
     // Save to Google Sheets
     if (sheets && SPREADSHEET_ID) {
       try {
-        await sheets.spreadsheets.values.append({
+        console.log('📝 Attempting to save to Google Sheets...')
+        console.log(`📊 Sheet: ${SHEET_NAME}`)
+        console.log(`🆔 Spreadsheet ID: ${SPREADSHEET_ID}`)
+        
+        const appendResponse = await sheets.spreadsheets.values.append({
           spreadsheetId: SPREADSHEET_ID,
           range: `${SHEET_NAME}!A:E`,
           valueInputOption: 'RAW',
@@ -119,16 +123,27 @@ exports.handler = async (event) => {
             ]]
           }
         })
-        console.log('✅ Data saved to Google Sheets')
-        console.log(`📊 Sheet: ${SHEET_NAME}`)
-        console.log(`🆔 Spreadsheet ID: ${SPREADSHEET_ID}`)
+        
+        console.log('✅ Data saved to Google Sheets successfully')
+        console.log(`📝 Updated range: ${appendResponse.data.updates.updatedRange}`)
+        console.log(`📊 Rows updated: ${appendResponse.data.updates.updatedRows}`)
+        
+        // Verify the write by reading the current data
+        const verifyResponse = await sheets.spreadsheets.values.get({
+          spreadsheetId: SPREADSHEET_ID,
+          range: `${SHEET_NAME}!A:E`
+        })
+        console.log(`🔍 Verification: Total rows in sheet: ${verifyResponse.data.values ? verifyResponse.data.values.length : 0}`)
+        
       } catch (error) {
         console.error('❌ Google Sheets error:', error)
         console.error('Error details:', error.message)
+        console.error('Error stack:', error.stack)
         // Continue without failing the request
       }
     } else {
       console.log('ℹ️ Google Sheets not configured - data logged to console only')
+      console.log('🔧 Check environment variables: GOOGLE_SERVICE_ACCOUNT_EMAIL, GOOGLE_PRIVATE_KEY')
     }
 
     return {
