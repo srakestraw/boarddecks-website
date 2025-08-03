@@ -17,6 +17,12 @@ export default function Header() {
               Manifesto
             </a>
             <a 
+              href="/why-us" 
+              className="text-primary font-medium hover:text-primary/80 transition-colors duration-200"
+            >
+              Why Us
+            </a>
+            <a 
               href="#ready-to-get-started" 
               className="text-primary font-medium hover:text-primary/80 transition-colors duration-200"
               onClick={(e) => {
