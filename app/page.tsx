@@ -269,7 +269,7 @@ export default function Home() {
 
 
       {/* The Problem Section - Conditional based on audience */}
-      {selectedAudience === 'firm' && (
+      {isClient && selectedAudience === 'firm' && (
         <section id="content-section" className="py-20 bg-white">
           <div className="max-w-5xl mx-auto px-4">
             <div className="text-center mb-4">
@@ -333,7 +333,7 @@ export default function Home() {
         </section>
       )}
 
-      {selectedAudience === 'company' && (
+      {isClient && selectedAudience === 'company' && (
         <section id="content-section" className="py-20 bg-white">
           <div className="max-w-5xl mx-auto px-4">
             <div className="text-center mb-4">
@@ -398,7 +398,7 @@ export default function Home() {
       )}
 
       {/* Our Solution Section - Conditional based on audience */}
-      {selectedAudience === 'firm' && (
+      {isClient && selectedAudience === 'firm' && (
         <section className="py-20 bg-gray-50">
           <div className="max-w-5xl mx-auto px-4">
             <h2 className="text-4xl md:text-5xl font-bold text-primary text-center mb-10">
@@ -471,7 +471,7 @@ export default function Home() {
         </section>
       )}
 
-      {selectedAudience === 'company' && (
+      {isClient && selectedAudience === 'company' && (
         <section className="py-20 bg-gray-50">
           <div className="max-w-5xl mx-auto px-4">
             <h2 className="text-4xl md:text-5xl font-bold text-primary text-center mb-10">
@@ -550,7 +550,7 @@ export default function Home() {
       )}
 
       {/* What You Get Section - Conditional based on audience */}
-      {selectedAudience === 'firm' && (
+      {isClient && selectedAudience === 'firm' && (
         <section className="py-20 bg-white">
           <div className="max-w-6xl mx-auto px-4">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary text-center mb-12">
@@ -635,7 +635,7 @@ export default function Home() {
         </section>
       )}
 
-      {selectedAudience === 'company' && (
+      {isClient && selectedAudience === 'company' && (
         <section className="py-20 bg-white">
           <div className="max-w-6xl mx-auto px-4">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary text-center mb-12">
