@@ -5,16 +5,24 @@ const SPREADSHEET_ID = process.env.GOOGLE_SPREADSHEET_ID || '1TrZEorP3JvvlXjY2wC
 const SHEET_NAME = process.env.GOOGLE_SHEET_NAME || 'Early Access Signups'
 const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY || 'AIzaSyA3blmcVuUrPkC2aV95tHeFXVi_GiGmfi8'
 
-// Initialize Google Sheets with API key
+// Initialize Google Sheets with service account (if credentials available)
 let sheets = null
-try {
-  const auth = new google.auth.GoogleAuth({
-    key: GOOGLE_API_KEY,
-    scopes: ['https://www.googleapis.com/auth/spreadsheets']
-  })
-  sheets = google.sheets({ version: 'v4', auth })
-} catch (error) {
-  console.error('Google Sheets initialization error:', error)
+if (process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL && process.env.GOOGLE_PRIVATE_KEY) {
+  try {
+    const auth = new google.auth.GoogleAuth({
+      credentials: {
+        client_email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
+        private_key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n')
+      },
+      scopes: ['https://www.googleapis.com/auth/spreadsheets']
+    })
+    sheets = google.sheets({ version: 'v4', auth })
+    console.log('✅ Google Sheets service account initialized')
+  } catch (error) {
+    console.error('Google Sheets service account initialization error:', error)
+  }
+} else {
+  console.log('ℹ️ Google Sheets service account credentials not configured')
 }
 
 exports.handler = async (event) => {
