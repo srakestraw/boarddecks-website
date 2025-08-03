@@ -8,6 +8,12 @@ const GOOGLE_PRIVATE_KEY = process.env.GOOGLE_PRIVATE_KEY || '-----BEGIN PRIVATE
 
 // Initialize Google Sheets with service account (if credentials available)
 let sheets = null
+console.log('🔧 Environment check:')
+console.log('📧 GOOGLE_SERVICE_ACCOUNT_EMAIL:', process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL ? 'SET' : 'NOT SET')
+console.log('🔑 GOOGLE_PRIVATE_KEY:', process.env.GOOGLE_PRIVATE_KEY ? 'SET' : 'NOT SET')
+console.log('📊 SPREADSHEET_ID:', process.env.GOOGLE_SPREADSHEET_ID || SPREADSHEET_ID)
+console.log('📋 SHEET_NAME:', process.env.GOOGLE_SHEET_NAME || SHEET_NAME)
+
 if (process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL && process.env.GOOGLE_PRIVATE_KEY) {
   try {
     const auth = new google.auth.GoogleAuth({
@@ -27,6 +33,11 @@ if (process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL && process.env.GOOGLE_PRIVATE_KEY) 
 }
 
 exports.handler = async (event) => {
+  console.log('🚀 Netlify Function triggered')
+  console.log('📋 Event method:', event.httpMethod)
+  console.log('📋 Event path:', event.path)
+  console.log('📋 Event body length:', event.body ? event.body.length : 0)
+  
   // Handle CORS
   const headers = {
     'Access-Control-Allow-Origin': '*',
