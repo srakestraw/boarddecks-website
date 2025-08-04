@@ -2,6 +2,7 @@
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import EarlyAccessForm from "@/components/EarlyAccessForm";
 
 export default function WhyUsPage() {
   return (
@@ -59,6 +60,18 @@ export default function WhyUsPage() {
         We've lived the pain. That's why we're building BoardDecks — not just to automate reporting, but to deliver clarity where it counts.
       </p>
       </main>
+
+      <section className="bg-dark-navy text-white py-16 px-6" id="ready-to-get-started">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
+          <p className="text-lg mb-8">
+            Join the waitlist and be among the first to experience the clarity of BoardDecks. No pitch decks. Just answers.
+          </p>
+
+          <EarlyAccessForm />
+        </div>
+      </section>
+
       <Footer />
     </>
   );
