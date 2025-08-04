@@ -129,7 +129,7 @@ export default function Home() {
       <section className="py-20 lg:py-32 bg-white">
         <div className="max-w-5xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary leading-tight mb-8">
-            Turn Hours of Board Prep into Instant Confidence
+            Turn Hours of Board and MBR Prep into Instant Confidence
           </h1>
           <p className="text-xl md:text-2xl text-darkNavy max-w-3xl mx-auto mb-12">
             A living board deck that syncs your systems, validates your numbers, and gives your team time back.
