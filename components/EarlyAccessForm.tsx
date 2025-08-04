@@ -105,8 +105,9 @@ export default function EarlyAccessForm() {
         
         // Reset form
         try {
-          if (e.currentTarget) {
-            e.currentTarget.reset();
+          const form = e.currentTarget as HTMLFormElement;
+          if (form) {
+            form.reset();
           }
         } catch (resetError) {
           console.log('⚠️ Form reset error (non-critical):', resetError);
