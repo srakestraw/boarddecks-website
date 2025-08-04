@@ -624,80 +624,62 @@ export default function Home() {
               What You Get
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
-              <article className="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-md transition-shadow duration-200">
-                <div className="flex items-center justify-center w-16 h-16 bg-[#231e5a] rounded-full mb-4 mx-auto">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
+            <ul className="space-y-6 max-w-4xl mx-auto">
+              <li className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-6 h-6 bg-[#231e5a] rounded-full flex items-center justify-center mt-1">
+                  <span className="text-white text-sm font-bold">•</span>
                 </div>
-                <h3 className="text-xl font-bold text-darkNavy text-center mb-3">
-                  Portfolio Visibility
-                </h3>
-                <p className="text-darkNavy text-base leading-relaxed text-center">
-                  Real-time insights across all portfolio companies in one unified dashboard.
-                </p>
-              </article>
+                <div className="flex-1">
+                  <p className="text-lg md:text-xl text-darkNavy leading-relaxed">
+                    <strong>Clarity across the portfolio</strong> — Standardized scorecards make comparisons consistent, fast, and trustworthy
+                  </p>
+                </div>
+              </li>
 
-              <article className="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-md transition-shadow duration-200">
-                <div className="flex items-center justify-center w-16 h-16 bg-[#231e5a] rounded-full mb-4 mx-auto">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                  </svg>
+              <li className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-6 h-6 bg-[#231e5a] rounded-full flex items-center justify-center mt-1">
+                  <span className="text-white text-sm font-bold">•</span>
                 </div>
-                <h3 className="text-xl font-bold text-darkNavy text-center mb-3">
-                  Standardized KPIs
-                </h3>
-                <p className="text-darkNavy text-base leading-relaxed text-center">
-                  Consistent metrics and reporting formats across your entire portfolio.
-                </p>
-              </article>
+                <div className="flex-1">
+                  <p className="text-lg md:text-xl text-darkNavy leading-relaxed">
+                    <strong>Pre-built visual cards</strong> — Designed to tell the story behind the numbers, not just present them
+                  </p>
+                </div>
+              </li>
 
-              <article className="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-md transition-shadow duration-200">
-                <div className="flex items-center justify-center w-16 h-16 bg-[#231e5a] rounded-full mb-4 mx-auto">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                  </svg>
+              <li className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-6 h-6 bg-[#231e5a] rounded-full flex items-center justify-center mt-1">
+                  <span className="text-white text-sm font-bold">•</span>
                 </div>
-                <h3 className="text-xl font-bold text-darkNavy text-center mb-3">
-                  Early Warning System
-                </h3>
-                <p className="text-darkNavy text-base leading-relaxed text-center">
-                  AI-powered alerts for portfolio risks and opportunities before they impact performance.
-                </p>
-              </article>
+                <div className="flex-1">
+                  <p className="text-lg md:text-xl text-darkNavy leading-relaxed">
+                    <strong>Executive-level summaries</strong> — Focus attention on what matters: growth, risk, and ROI
+                  </p>
+                </div>
+              </li>
 
-              <article className="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-md transition-shadow duration-200">
-                <div className="flex items-center justify-center w-16 h-16 bg-[#231e5a] rounded-full mb-4 mx-auto">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                  </svg>
+              <li className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-6 h-6 bg-[#231e5a] rounded-full flex items-center justify-center mt-1">
+                  <span className="text-white text-sm font-bold">•</span>
                 </div>
-                <h3 className="text-xl font-bold text-darkNavy text-center mb-3">
-                  Time Back
-                </h3>
-                <p className="text-darkNavy text-base leading-relaxed text-center">
-                  Automated data collection and reporting. Focus on value creation, not data wrangling.
-                </p>
-              </article>
+                <div className="flex-1">
+                  <p className="text-lg md:text-xl text-darkNavy leading-relaxed">
+                    <strong>Real-time confidence</strong> — Data is validated using AI across marketing plans, pipeline, product usage, and customer health
+                  </p>
+                </div>
+              </li>
 
-              <article className="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-md transition-shadow duration-200">
-                <div className="flex items-center justify-center w-16 h-16 bg-[#231e5a] rounded-full mb-4 mx-auto">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
+              <li className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-6 h-6 bg-[#231e5a] rounded-full flex items-center justify-center mt-1">
+                  <span className="text-white text-sm font-bold">•</span>
                 </div>
-                <h3 className="text-xl font-bold text-darkNavy text-center mb-3">
-                  Portfolio Company Health Card
-                </h3>
-                <p className="text-darkNavy text-base leading-relaxed text-center mb-2">
-                  Instantly surface which businesses need your attention — based on product usage, financial performance, support trends, and engagement scores.
-                </p>
-                <p className="text-sm text-gray-600 text-center italic">
-                  Know where you need to focus. No spreadsheets. No guesswork.
-                </p>
-              </article>
-            </div>
+                <div className="flex-1">
+                  <p className="text-lg md:text-xl text-darkNavy leading-relaxed">
+                    <strong>We know how to tell the story</strong> — Helping PE partners surface the signal, not just the noise—with visuals that delight and inform
+                  </p>
+                </div>
+              </li>
+            </ul>
           </div>
         </section>
       )}
@@ -709,63 +691,62 @@ export default function Home() {
               What You Get
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <article className="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-md transition-shadow duration-200">
-                <div className="flex items-center justify-center w-16 h-16 bg-[#231e5a] rounded-full mb-4 mx-auto">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
+            <ul className="space-y-6 max-w-4xl mx-auto">
+              <li className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-6 h-6 bg-[#231e5a] rounded-full flex items-center justify-center mt-1">
+                  <span className="text-white text-sm font-bold">•</span>
                 </div>
-                <h3 className="text-xl font-bold text-darkNavy text-center mb-3">
-                  Time Back
-                </h3>
-                <p className="text-darkNavy text-base leading-relaxed text-center">
-                  No more slide formatting or last-minute updates. Focus on what matters most.
-                </p>
-              </article>
+                <div className="flex-1">
+                  <p className="text-lg md:text-xl text-darkNavy leading-relaxed">
+                    <strong>Faster prep, stronger outcomes</strong> — Cut hours of slide building and get time back for strategy
+                  </p>
+                </div>
+              </li>
 
-              <article className="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-md transition-shadow duration-200">
-                <div className="flex items-center justify-center w-16 h-16 bg-[#231e5a] rounded-full mb-4 mx-auto">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                  </svg>
+              <li className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-6 h-6 bg-[#231e5a] rounded-full flex items-center justify-center mt-1">
+                  <span className="text-white text-sm font-bold">•</span>
                 </div>
-                <h3 className="text-xl font-bold text-darkNavy text-center mb-3">
-                  Trusted Forecasts
-                </h3>
-                <p className="text-darkNavy text-base leading-relaxed text-center">
-                  Validated by cross-system ML models. Confident predictions your board can rely on.
-                </p>
-              </article>
+                <div className="flex-1">
+                  <p className="text-lg md:text-xl text-darkNavy leading-relaxed">
+                    <strong>Pre-built visual cards</strong> — Purpose-built to align your updates with board expectations
+                  </p>
+                </div>
+              </li>
 
-              <article className="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-md transition-shadow duration-200">
-                <div className="flex items-center justify-center w-16 h-16 bg-[#231e5a] rounded-full mb-4 mx-auto">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                  </svg>
+              <li className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-6 h-6 bg-[#231e5a] rounded-full flex items-center justify-center mt-1">
+                  <span className="text-white text-sm font-bold">•</span>
                 </div>
-                <h3 className="text-xl font-bold text-darkNavy text-center mb-3">
-                  Churn Visibility
-                </h3>
-                <p className="text-darkNavy text-base leading-relaxed text-center">
-                  Proactive insight using NPS and usage data. Spot issues before they become problems.
-                </p>
-              </article>
+                <div className="flex-1">
+                  <p className="text-lg md:text-xl text-darkNavy leading-relaxed">
+                    <strong>Data you can trust</strong> — Machine learning validates your forecast, churn risk, and KPIs
+                  </p>
+                </div>
+              </li>
 
-              <article className="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-md transition-shadow duration-200">
-                <div className="flex items-center justify-center w-16 h-16 bg-[#231e5a] rounded-full mb-4 mx-auto">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                  </svg>
+              <li className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-6 h-6 bg-[#231e5a] rounded-full flex items-center justify-center mt-1">
+                  <span className="text-white text-sm font-bold">•</span>
                 </div>
-                <h3 className="text-xl font-bold text-darkNavy text-center mb-3">
-                  Board Confidence
-                </h3>
-                <p className="text-darkNavy text-base leading-relaxed text-center">
-                  Professional, data-driven presentations that build trust with your board.
-                </p>
-              </article>
-            </div>
+                <div className="flex-1">
+                  <p className="text-lg md:text-xl text-darkNavy leading-relaxed">
+                    <strong>Stay focused on impact</strong> — Spend less time formatting and more time executing
+                  </p>
+                </div>
+              </li>
+
+              <li className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-6 h-6 bg-[#231e5a] rounded-full flex items-center justify-center mt-1">
+                  <span className="text-white text-sm font-bold">•</span>
+                </div>
+                <div className="flex-1">
+                  <p className="text-lg md:text-xl text-darkNavy leading-relaxed">
+                    <strong>We know how to tell the story</strong> — Give your board confidence with compelling, simple visuals that make your message land
+                  </p>
+                </div>
+              </li>
+            </ul>
           </div>
         </section>
       )}
