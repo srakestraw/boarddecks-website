@@ -61,7 +61,7 @@ export default function WhyUsPage() {
       </p>
       </main>
 
-      <section className="bg-dark-navy text-white py-16 px-6" id="ready-to-get-started">
+      <section className="bg-primary text-white py-16 px-6" id="ready-to-get-started">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
           <p className="text-lg mb-8">
