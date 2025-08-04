@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export default function WhyUsPage() {
   return (
@@ -47,6 +48,7 @@ export default function WhyUsPage() {
         We've lived the pain. That's why we're building BoardDecks — not just to automate reporting, but to deliver clarity where it counts.
       </p>
       </main>
+      <Footer />
     </>
   );
 } 

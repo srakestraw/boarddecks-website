@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import EarlyAccessForm from "@/components/EarlyAccessForm";
 
 export default function ManifestoPage() {
@@ -60,6 +61,7 @@ export default function ManifestoPage() {
         </div>
       </section>
       </main>
+      <Footer />
     </>
   );
 } 

@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react'
 import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
 export default function Home() {
   const [showForm, setShowForm] = useState(false)
@@ -896,6 +897,7 @@ export default function Home() {
         </div>
       </section>
 
+      <Footer />
     </div>
   )
 } 

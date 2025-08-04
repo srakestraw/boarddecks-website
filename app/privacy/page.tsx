@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export default function PrivacyPage() {
   return (
@@ -30,6 +31,7 @@ export default function PrivacyPage() {
           If you have any concerns, reach out at <a href="mailto:hello@boarddecks.com" className="text-primary underline">hello@boarddecks.com</a>.
         </p>
       </main>
+      <Footer />
     </>
   );
 } 
