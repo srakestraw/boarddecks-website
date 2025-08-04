@@ -5,7 +5,9 @@ export default function Footer() {
         
         {/* Left: Logo and tagline */}
         <div className="flex items-center space-x-3">
-          <img src="/logos/board-decks-logo.svg" alt="BoardDecks Logo" className="h-6 w-auto" />
+          <a href="/" className="hover:opacity-80 transition-opacity duration-200">
+            <img src="/logos/board-decks-logo.svg" alt="BoardDecks Logo" className="h-6 w-auto" />
+          </a>
           <span className="text-gray-700 font-medium">Clarity Where It Counts</span>
         </div>
 
