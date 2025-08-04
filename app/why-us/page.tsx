@@ -49,6 +49,10 @@ export default function WhyUsPage() {
           <strong>We build for boardroom reality.</strong><br />
           Our outputs integrate with how executives already work—push to PowerPoint and Google Slides for quick presentations, with Excel and Google Sheets for structured analysis.
         </li>
+
+        <li>
+          <strong>Whether your board needs a single KPI slide or a full deck, we make it push-button simple—into the formats you already use.</strong>
+        </li>
       </ul>
 
       <p className="mt-12 text-lg text-center font-medium">

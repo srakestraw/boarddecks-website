@@ -686,7 +686,7 @@ export default function Home() {
                 </div>
                 <div className="flex-1">
                   <p className="text-lg md:text-xl text-darkNavy leading-relaxed">
-                    <strong>Push-Ready Outputs</strong> — Generate presentation-ready decks in PowerPoint or Google Slides. Deep dives are just as easy, with structured data exportable to Excel and Google Sheets.
+                    <strong>Push-Ready Outputs</strong> — Whether it's a single slide or the whole board deck, export directly to PowerPoint or Google Slides. For data deep dives, export to Excel or Google Sheets—fully formatted and ready to present.
                   </p>
                 </div>
               </li>
@@ -764,7 +764,7 @@ export default function Home() {
                 </div>
                 <div className="flex-1">
                   <p className="text-lg md:text-xl text-darkNavy leading-relaxed">
-                    <strong>Push-Ready Outputs</strong> — Generate presentation-ready decks in PowerPoint or Google Slides. Deep dives are just as easy, with structured data exportable to Excel and Google Sheets.
+                    <strong>Push-Ready Outputs</strong> — Whether it's a single slide or the whole board deck, export directly to PowerPoint or Google Slides. For data deep dives, export to Excel or Google Sheets—fully formatted and ready to present.
                   </p>
                 </div>
               </li>
