@@ -44,6 +44,11 @@ export default function WhyUsPage() {
           <strong>We know how to tell the story.</strong><br />
           Our roots are in analytics and visualization — helping executive teams surface the signal, not just the noise.
         </li>
+
+        <li>
+          <strong>We build for boardroom reality.</strong><br />
+          Our outputs integrate with how executives already work—push to PowerPoint and Google Slides for quick presentations, with Excel and Google Sheets for structured analysis.
+        </li>
       </ul>
 
       <p className="mt-12 text-lg text-center font-medium">

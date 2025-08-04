@@ -679,6 +679,17 @@ export default function Home() {
                   </p>
                 </div>
               </li>
+
+              <li className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-6 h-6 bg-[#231e5a] rounded-full flex items-center justify-center mt-1">
+                  <span className="text-white text-sm font-bold">•</span>
+                </div>
+                <div className="flex-1">
+                  <p className="text-lg md:text-xl text-darkNavy leading-relaxed">
+                    <strong>Push-Ready Outputs</strong> — Generate presentation-ready decks in PowerPoint or Google Slides. Deep dives are just as easy, with structured data exportable to Excel and Google Sheets.
+                  </p>
+                </div>
+              </li>
             </ul>
           </div>
         </section>
@@ -743,6 +754,17 @@ export default function Home() {
                 <div className="flex-1">
                   <p className="text-lg md:text-xl text-darkNavy leading-relaxed">
                     <strong>We know how to tell the story</strong> — Give your board confidence with compelling, simple visuals that make your message land
+                  </p>
+                </div>
+              </li>
+
+              <li className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-6 h-6 bg-[#231e5a] rounded-full flex items-center justify-center mt-1">
+                  <span className="text-white text-sm font-bold">•</span>
+                </div>
+                <div className="flex-1">
+                  <p className="text-lg md:text-xl text-darkNavy leading-relaxed">
+                    <strong>Push-Ready Outputs</strong> — Generate presentation-ready decks in PowerPoint or Google Slides. Deep dives are just as easy, with structured data exportable to Excel and Google Sheets.
                   </p>
                 </div>
               </li>
