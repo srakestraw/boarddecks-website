@@ -31,18 +31,7 @@ export default function Home() {
     setIsClient(true)
   }, [])
   
-  // Auto-scroll to content section when audience is selected
-  useEffect(() => {
-    if (selectedAudience) {
-      const contentSection = document.getElementById('content-section')
-      if (contentSection) {
-        contentSection.scrollIntoView({ 
-          behavior: 'smooth', 
-          block: 'start' 
-        })
-      }
-    }
-  }, [selectedAudience])
+
   const formRef = useRef<HTMLDivElement>(null)
 
   const handleRequestAccess = () => {
