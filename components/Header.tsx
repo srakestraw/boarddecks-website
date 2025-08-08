@@ -87,6 +87,13 @@ export default function Header() {
           <div className="md:hidden absolute top-full left-0 right-0 bg-white border-b border-gray-100 shadow-lg z-50">
             <div className="px-6 py-4 space-y-4">
               <a 
+                href="/" 
+                className="block text-primary font-medium hover:text-primary/80 transition-colors duration-200 py-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Home
+              </a>
+              <a 
                 href="/manifesto" 
                 className="block text-primary font-medium hover:text-primary/80 transition-colors duration-200 py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
